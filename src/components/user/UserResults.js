@@ -3,7 +3,7 @@ import axios from "axios";
 
 function UserResults() {
   const [meals, setMeals] = useState([]);
-  console.log(meals)
+  console.log(meals);
   useEffect(() => {
     fetchMeals();
   }, []);
@@ -11,9 +11,7 @@ function UserResults() {
   const fetchMeals = async () => {
     axios
       .get(`${process.env.REACT_APP_MEAL_URL}/categories.php`)
-      .then(
-        (response) =>  setMeals(response.data))
-      );
+      .then((response) => setMeals(response.data));
   };
 
   return <div>results</div>;
