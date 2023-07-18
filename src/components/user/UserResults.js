@@ -7,7 +7,7 @@ function UserResults() {
   }, []);
   const fetchMeals = async () => {
     axios
-      .get("www.themealdb.com/api/json/v1/1/categories.php")
+      .get("https://www.themealdb.com/api/json/v1/1/categories.php")
       .then((response) => console.log(response.data));
   };
   return <div>results</div>;
