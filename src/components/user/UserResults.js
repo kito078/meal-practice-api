@@ -1,16 +1,14 @@
 import React, { useEffect } from "react";
+import axios from "axios";
 
 function UserResults() {
   useEffect(() => {
     fetchMeals();
   }, []);
   const fetchMeals = async () => {
-    const response = await fetch(
-      `${process.env.REACT_APP_MEAL_URL}/categories.php`
-    );
-    const data = await response.json();
-
-    console.log(data);
+    axios
+      .get("www.themealdb.com/api/json/v1/1/categories.php")
+      .then((response) => console.log(response.data));
   };
   return <div>results</div>;
 }
