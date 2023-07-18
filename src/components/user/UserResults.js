@@ -1,30 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import MealItem from "./MealItem";
+import MealContext from "../../hooks/MealContext";
 
 function UserResults() {
-  const [meals, setMeals] = useState([]);
+  // const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  console.log(meals);
-  useEffect(() => {
-    fetchMeals();
-  }, []);
+  const { meals } = useContext(MealContext);
 
-  const fetchMeals = async () => {
-    try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_MEAL_URL}/search.php?s=beef`
-      );
-      setMeals(response.data.meals);
-      setLoading(false);
-    } catch (error) {
-      // Handle the error here
-      console.error("Error fetching meals:", error);
-      // You can also update the state or show an error message to the user if needed
-      // For example: setError("Failed to fetch meals. Please try again later.");
-    }
-  };
+  console.log(meals);
 
   if (!loading) {
     return (
