@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 function MealItem({ meal }) {
   const { strCategory, strMealThumb, strInstructions, idMeal } = meal;
+  //console.log(meal);
+
   return (
     <div>
       {strCategory}

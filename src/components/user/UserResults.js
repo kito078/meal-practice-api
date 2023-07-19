@@ -5,17 +5,18 @@ import MealContext from "../../hooks/MealContext";
 
 function UserResults() {
   // const [meals, setMeals] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
-  const { meals } = useContext(MealContext);
+  const { meals, loading } = useContext(MealContext);
 
-  console.log(meals);
+  //console.log(meals);
 
   if (!loading) {
     return (
       <div>
         {meals &&
           meals.map((meal) => <MealItem key={meal.idMeal} meal={meal} />)}
+        code
       </div>
     );
   } else {
