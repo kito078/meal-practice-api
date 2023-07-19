@@ -29,7 +29,7 @@ export const MealProvider = ({ children }) => {
       setLoading();
       const response = await axios.get(`${MEAL_URL}/search.php?s=${text}`);
       const data = response.data.meals;
-      console.log(data);
+      // console.log(data);
       //   setMeals(data);
 
       dispatch({
@@ -55,7 +55,8 @@ export const MealProvider = ({ children }) => {
       setLoading();
       const response = await axios.get(`${MEAL_URL}/lookup.php?i=${idMeal}`);
       const data = response.data.meals;
-      console.log(data);
+      const items = data.map((item) => ({ ...item }));
+      console.log(items);
       //   setMeals(data);
 
       dispatch({

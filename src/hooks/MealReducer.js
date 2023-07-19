@@ -9,7 +9,7 @@ const mealReducer = (state, action) => {
     case "GET_MEAL":
       return {
         ...state,
-        meals: action.payload,
+        meal: action.payload,
         loading: false,
       };
 
